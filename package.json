@@ -1,0 +1,32 @@
+{
+  "name": "webpack-distsize-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/privatenumber/webpack-distsize-plugin.git"
+  },
+  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/privatenumber/webpack-distsize-plugin/issues"
+  },
+  "homepage": "https://github.com/privatenumber/webpack-distsize-plugin#readme",
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "memfs": "^3.2.0",
+    "outdent": "^0.7.1",
+    "unionfs": "^4.4.0",
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {
+    "filesize": "^6.1.0",
+    "gzip-size": "^5.1.1",
+    "lodash": "^4.17.15",
+    "write-json-file": "github:privatenumber/write-json-file#custom-fs"
+  }
+}

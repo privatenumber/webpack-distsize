@@ -20,6 +20,9 @@ function build(volJson, config = {}) {
 				minimize: false,
 				providedExports: false,
 			},
+			resolve: {
+				modules: [path.resolve('../node_modules')]
+			},
 			plugins: [
 				new DistsizePlugin(),
 			],
@@ -42,6 +45,8 @@ function build(volJson, config = {}) {
 				reject(stats.compilation.errors);
 				return;
 			}
+
+			// console.log(stats.compilation)
 
 			resolve(JSON.parse(mfs.readFileSync('/dist/.distsize.json').toString()));
 		});

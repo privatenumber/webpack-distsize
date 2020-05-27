@@ -24,6 +24,8 @@
     "webpack": "^4.43.0"
   },
   "dependencies": {
+    "chalk": "^4.0.0",
+    "cliui": "^6.0.0",
     "filesize": "^6.1.0",
     "gzip-size": "^5.1.1",
     "lodash": "^4.17.15"

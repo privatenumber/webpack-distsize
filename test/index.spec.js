@@ -42,16 +42,21 @@ test('Multiple output files', async () => {
 	console.log(built);
 });
 
-test('Single output file w/ chunk', async () => {
+test('Single output file w/ chunks', async () => {
 	const built = await build({
 		'/index.js': outdent`
-		import('/dep').then(console.log);
+		import('/dep1').then(console.log);
+		import('/dep2').then(console.log);
 		const value = 'hello world A';
 		export default value;
 		`,
-		'/dep.js': outdent`
+		'/dep1.js': outdent`
 		const value = 'goodbye world B';
 		export default value;
+		`,
+		'/dep2.js': outdent`
+		// import _ from 'lodash';
+		console.log('_');
 		`,
 	}, {
 		entry: '/index.js'

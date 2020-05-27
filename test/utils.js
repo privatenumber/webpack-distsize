@@ -43,8 +43,7 @@ function build(volJson, config = {}) {
 				return;
 			}
 
-			resolve(mfs.readdirSync('/dist'));
-			// resolve(mfs.readFileSync(`/dist/main.js`).toString());
+			resolve(JSON.parse(mfs.readFileSync('/dist/.distsize.json').toString()));
 		});
 	});
 }

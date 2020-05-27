@@ -26,7 +26,6 @@
   "dependencies": {
     "filesize": "^6.1.0",
     "gzip-size": "^5.1.1",
-    "lodash": "^4.17.15",
-    "write-json-file": "github:privatenumber/write-json-file#custom-fs"
+    "lodash": "^4.17.15"
   }
 }

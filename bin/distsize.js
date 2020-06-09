@@ -2,12 +2,13 @@
 
 const fs = require('fs');
 const minimist = require('minimist');
+const { promisify } = require('util');
 const { version } = require('../package');
 const formatResult = require('../lib/format-result');
-const { promisify } = require('util');
+
 const $readFile = promisify(fs.readFile);
 
-const readJson = filepath => $readFile(filepath).then(JSON.parse);
+const readJson = (filepath) => $readFile(filepath).then(JSON.parse);
 
 (async () => {
 	const argv = minimist(process.argv.slice(2), {
@@ -24,7 +25,7 @@ const readJson = filepath => $readFile(filepath).then(JSON.parse);
 	}
 
 	if (argv.help) {
-		return console.log(`HELP!`);
+		return console.log('HELP!');
 	}
 
 	const [filepath = '.distsize.json'] = argv._;
@@ -32,7 +33,5 @@ const readJson = filepath => $readFile(filepath).then(JSON.parse);
 
 	const distsizeData = await readJson(filepath);
 
-	console.log(formatResult(distsizeData))
-
-
+	console.log(formatResult(distsizeData));
 })();

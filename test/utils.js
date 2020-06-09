@@ -9,7 +9,7 @@ const DistsizePlugin = require('..');
 function build(volJson, config = {}) {
 	return new Promise((resolve, reject) => {
 		const mfs = createFsFromVolume(Volume.fromJSON(volJson));
-		
+
 		// Object.entries(Volume.prototype).forEach(([name, fn]) => {
 		// 	mfs[name] = fn.bind(mfs);
 		// });
@@ -22,7 +22,7 @@ function build(volJson, config = {}) {
 				providedExports: false,
 			},
 			resolve: {
-				modules: [path.resolve(__dirname, '../node_modules')]
+				modules: [path.resolve(__dirname, '../node_modules')],
 			},
 			plugins: [
 				new DistsizePlugin(),

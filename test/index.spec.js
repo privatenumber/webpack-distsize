@@ -8,12 +8,11 @@ test('Single output file', async () => {
 		export default value;
 		`,
 	}, {
-		entry: '/index.js'
+		entry: '/index.js',
 	});
 
 	expect(typeof built).toBe('string');
 	console.log(built);
-
 });
 
 test('Multiple output files', async () => {
@@ -59,7 +58,7 @@ test('Single output file w/ chunks', async () => {
 		console.log('_');
 		`,
 	}, {
-		entry: '/index.js'
+		entry: '/index.js',
 	});
 
 	expect(typeof built).toBe('string');
@@ -87,17 +86,16 @@ test('Single output file w/ chunks', async () => {
 		'/dep3.js': outdent`
 		const test = Math.random();
 		export default test;
-		`
+		`,
 	}, {
 		entry: {
-			longlonglonglonglonglonglonglonglongEntryName: '/index.js',
+			longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName: '/index.js',
 		},
 		output: {
-			filename: '[name].[contenthash].js'
+			filename: '[name].[contenthash].js',
 		},
 	});
 
 	expect(typeof built).toBe('string');
 	console.log(built);
 });
-

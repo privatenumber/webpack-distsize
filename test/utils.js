@@ -1,5 +1,6 @@
 const webpack = require('webpack');
-const { Volume } = require('memfs');
+const merge = require('webpack-merge');
+const { createFsFromVolume, Volume } = require('memfs');
 const fs = require('fs');
 const path = require('path');
 const { ufs } = require('unionfs');
@@ -7,30 +8,29 @@ const DistsizePlugin = require('..');
 
 function build(volJson, config = {}) {
 	return new Promise((resolve, reject) => {
-		const mfs = Volume.fromJSON(volJson);
+		const mfs = createFsFromVolume(Volume.fromJSON(volJson));
 		
-		Object.entries(Volume.prototype).forEach(([name, fn]) => {
-			mfs[name] = fn.bind(mfs);
-		});
+		// Object.entries(Volume.prototype).forEach(([name, fn]) => {
+		// 	mfs[name] = fn.bind(mfs);
+		// });
 		mfs.join = path.join.bind(path);
 
-		const compiler = webpack({
+		const compiler = webpack(merge({
 			mode: 'production',
 			optimization: {
 				minimize: false,
 				providedExports: false,
 			},
 			resolve: {
-				modules: [path.resolve('../node_modules')]
+				modules: [path.resolve(__dirname, '../node_modules')]
 			},
 			plugins: [
 				new DistsizePlugin(),
 			],
-			...config,
 			output: {
 				path: '/dist',
 			},
-		});
+		}, config));
 
 		compiler.inputFileSystem = ufs.use(fs).use(mfs);
 		compiler.outputFileSystem = mfs;
@@ -48,7 +48,7 @@ function build(volJson, config = {}) {
 
 			// console.log(stats.compilation)
 
-			resolve(JSON.parse(mfs.readFileSync('/dist/.distsize.json').toString()));
+			resolve(mfs.readFileSync('/dist/.distsize.json').toString());
 		});
 	});
 }

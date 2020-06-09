@@ -6,6 +6,9 @@
   "scripts": {
     "test": "jest"
   },
+  "bin": {
+    "distsize": "/bin/distsize.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/privatenumber/webpack-distsize-plugin.git"
@@ -21,13 +24,17 @@
     "memfs": "^3.2.0",
     "outdent": "^0.7.1",
     "unionfs": "^4.4.0",
-    "webpack": "^4.43.0"
+    "webpack": "^4.43.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "chalk": "^4.0.0",
+    "cli-truncate": "^2.1.0",
     "cliui": "^6.0.0",
     "filesize": "^6.1.0",
     "gzip-size": "^5.1.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "minimist": "^1.2.5",
+    "strip-ansi": "^6.0.0"
   }
 }

@@ -69,10 +69,33 @@ npx distsize
   ]
   ```
 
+  
+## 💁‍♀️ FAQ
+- **Can it track and display asset growth as a percentage?**
+
+  Webpack builds can emit new assets with completely different names depending on [configuration](https://webpack.js.org/configuration/output/#template-strings), so it's near impossible to _accurately_ draw a comparison on all builds.
+  
+  If only the name of the asset changed, the old and new versions of file can be tracked via content, but if the content didn't change, size didn't either so there isn't value in surfacing that.
+  
+  If both the name and content changed, it could be argued they're completely different files. Even Git wouldn't be able to automatically attribute the change.
+  
+  The only growth that can be accurately measured is in total size, which is important, but is followed by the question "why?" which requires looking at growth in specific assets.
+
+  There may be future support to measure growth for builds that have static asset names but currently, a good enough read can currently be made via Github diff.
+
+- **Can it track size impact from dependency changes?**
+
+  If a dependency change impacts distribution size, it will be reflected by this plugin, but it will not contain any details that hint at which dependency grew in size. I recommend doing upgrades in isolation so it's easily identifiable. 
+
+  Distsize focuses specifically on distribution size and making it digestible because that alone can be overwhelming -- a large codebase can produce hundreds of assets.
+
+  If you want something similar for dependencies, I recommend using [webpack-dependency-size](https://github.com/privatenumber/webpack-dependency-size).
+
+
 ## 👨‍👩‍👧 Related
 - [webpack-dependency-size](https://github.com/privatenumber/webpack-dependency-size) - Analyze dependency assets bundled into your Webpack build
 
-## License
+## 💼 License
 
 MIT
 

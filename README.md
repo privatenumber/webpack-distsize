@@ -1,13 +1,7 @@
-<h1>
-	Webpack Distsize
-	<a href="https://npm.im/webpack-distsize-plugin"><img src="https://badgen.net/npm/v/webpack-distsize-plugin"></a>
-	<a href="https://npm.im/webpack-distsize-plugin"><img src="https://badgen.net/npm/dm/webpack-distsize-plugin"></a>
-	<a href="https://packagephobia.now.sh/result?p=webpack-distsize-plugin"><img src="https://packagephobia.now.sh/badge?p=webpack-distsize-plugin"></a>
-	<a href="https://bundlephobia.com/result?p=webpack-distsize-plugin"><img src="https://badgen.net/bundlephobia/minzip/webpack-distsize-plugin"></a>
-</h1>
+# Webpack Distsize <a href="https://npm.im/webpack-distsize"><img src="https://badgen.net/npm/v/webpack-distsize"></a> <a href="https://npm.im/webpack-distsize"><img src="https://badgen.net/npm/dm/webpack-distsize"></a> <a href="https://packagephobia.now.sh/result?p=webpack-distsize"><img src="https://packagephobia.now.sh/badge?p=webpack-distsize"></a>
 
 <p align="center">
-  <img src="/.github/screenshot.png" width="70%">
+  <img src="https://github.com/privatenumber/webpack-distsize/raw/master/.github/screenshot.png" width="70%">
   <br>
   <i>Track Webpack output size via version control</i>
 </p>

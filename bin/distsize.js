@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const minimist = require('minimist');
+const chalk = require('chalk');
 const { promisify } = require('util');
 const { version } = require('../package');
 const formatResult = require('../lib/format-result');
@@ -17,6 +18,7 @@ const readJson = (filepath) => $readFile(filepath).then(JSON.parse);
 		],
 		alias: {
 			help: 'h',
+			version: 'v',
 		},
 	});
 
@@ -28,11 +30,21 @@ const readJson = (filepath) => $readFile(filepath).then(JSON.parse);
 
 	if (argv.help) {
 		// eslint-disable-next-line no-console
-		console.log('HELP!');
+		console.log(`
+Usage: distsize [distsize.json]
+
+Options:
+   --help, -h            [boolean] show help
+   --version, -v         [boolean] show version
+		`);
 		return;
 	}
 
 	const [filepath = '.distsize.json'] = argv._;
+	if (!fs.existsSync(filepath)) {
+		console.error(chalk.bold.red('[distsize error]'), `"${filepath}" doesn't exist\n`);
+		return;
+	}
 	const distsizeData = await readJson(filepath);
 
 	// eslint-disable-next-line no-console

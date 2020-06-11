@@ -21,17 +21,20 @@ const readJson = (filepath) => $readFile(filepath).then(JSON.parse);
 	});
 
 	if (argv.version) {
-		return console.log(`Distsize plugin ${version}`);
+		// eslint-disable-next-line no-console
+		console.log(`Distsize plugin ${version}`);
+		return;
 	}
 
 	if (argv.help) {
-		return console.log('HELP!');
+		// eslint-disable-next-line no-console
+		console.log('HELP!');
+		return;
 	}
 
 	const [filepath = '.distsize.json'] = argv._;
-
-
 	const distsizeData = await readJson(filepath);
 
+	// eslint-disable-next-line no-console
 	console.log(formatResult(distsizeData));
 })();

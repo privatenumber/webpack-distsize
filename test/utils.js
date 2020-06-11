@@ -10,9 +10,6 @@ function build(volJson, config = {}) {
 	return new Promise((resolve, reject) => {
 		const mfs = createFsFromVolume(Volume.fromJSON(volJson));
 
-		// Object.entries(Volume.prototype).forEach(([name, fn]) => {
-		// 	mfs[name] = fn.bind(mfs);
-		// });
 		mfs.join = path.join.bind(path);
 
 		const compiler = webpack(merge({
@@ -25,7 +22,7 @@ function build(volJson, config = {}) {
 				modules: [path.resolve(__dirname, '../node_modules')],
 			},
 			plugins: [
-				new DistsizePlugin(),
+				new DistsizePlugin({ log: false }),
 			],
 			output: {
 				path: '/dist',
@@ -46,9 +43,7 @@ function build(volJson, config = {}) {
 				return;
 			}
 
-			// console.log(stats.compilation)
-
-			resolve(mfs.readFileSync('/dist/.distsize.json').toString());
+			resolve(JSON.parse(mfs.readFileSync('/dist/.distsize.json').toString()));
 		});
 	});
 }

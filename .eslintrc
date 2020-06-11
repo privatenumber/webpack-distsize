@@ -4,8 +4,6 @@
 	"rules": {
 		"indent": "off",
 		"indent-legacy": ["error", "tab"],
-		"no-tabs": "off",
-		"prefer-spread": "off",
-		"prefer-object-spread": "off"
+		"no-tabs": "off"
 	}
 }

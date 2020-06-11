@@ -7,6 +7,17 @@
     "test": "jest",
     "lint": "eslint ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint -- --fix",
+      "jest --bail --findRelatedTests"
+    ]
+  },
   "bin": {
     "distsize": "/bin/distsize.js"
   },
@@ -24,7 +35,9 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.21.1",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "lint-staged": "^10.2.9",
     "memfs": "^3.2.0",
     "outdent": "^0.7.1",
     "unionfs": "^4.4.0",
@@ -33,6 +46,7 @@
   },
   "dependencies": {
     "chalk": "^4.0.0",
+    "cli-simple-table": "0.0.1",
     "cli-truncate": "^2.1.0",
     "cliui": "^6.0.0",
     "filesize": "^6.1.0",

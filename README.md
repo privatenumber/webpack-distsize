@@ -6,6 +6,10 @@
 	<a href="https://bundlephobia.com/result?p=webpack-distsize-plugin"><img src="https://badgen.net/bundlephobia/minzip/webpack-distsize-plugin"></a>
 </h1>
 
+<p align="center">
+	<img src="/.github/screenshot.png">
+</p>
+
 Be conscious of distrubtion size by tracking asset size stats with version control
 
 ## 🙋‍♀️ Why?

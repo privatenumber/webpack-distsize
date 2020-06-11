@@ -1,7 +1,7 @@
 {
   "name": "webpack-distsize",
   "version": "0.0.1",
-  "description": "",
+  "description": "Track Webpack output size via version control",
   "main": "lib",
   "scripts": {
     "test": "jest",

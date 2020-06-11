@@ -6,7 +6,7 @@
   <i>Track Webpack output size via version control</i>
 </p>
 
-## 🙋‍♀️ Why?
+## ⭐️ Features
 - **📊 Size conscious** Be aware of how your changes impact file size
 - **💅 Pretty formatting** View color-coded assets ordered by size via `npx distsize`
 - **⚙️ Configurable** Save distsize data where you like and set custom thresholds
@@ -69,6 +69,8 @@ npx distsize
   ]
   ```
 
+## 👨‍👩‍👧 Related
+- [webpack-dependency-size](https://github.com/privatenumber/webpack-dependency-size) - Analyze dependency assets bundled into your Webpack build
 
 ## License
 

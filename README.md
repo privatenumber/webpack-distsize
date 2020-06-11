@@ -1,12 +1,12 @@
 <h1>
-	Webpack Distsize Plugin
+	Webpack Distsize
 	<a href="https://npm.im/webpack-distsize-plugin"><img src="https://badgen.net/npm/v/webpack-distsize-plugin"></a>
 	<a href="https://npm.im/webpack-distsize-plugin"><img src="https://badgen.net/npm/dm/webpack-distsize-plugin"></a>
 	<a href="https://packagephobia.now.sh/result?p=webpack-distsize-plugin"><img src="https://packagephobia.now.sh/badge?p=webpack-distsize-plugin"></a>
 	<a href="https://bundlephobia.com/result?p=webpack-distsize-plugin"><img src="https://badgen.net/bundlephobia/minzip/webpack-distsize-plugin"></a>
 </h1>
 
-Be conscious of distrubtion size by adding asset size stats to version control
+Be conscious of distrubtion size by tracking asset size stats with version control
 
 ## 🙋‍♀️ Why?
 - **📊 Size conscious** Be aware of how your changes impact file size

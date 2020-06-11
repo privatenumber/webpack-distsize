@@ -7,9 +7,9 @@
 </h1>
 
 <p align="center">
-  <img src="/.github/screenshot.png">
+  <img src="/.github/screenshot.png" width="70%">
   <br>
-  _Track Webpack output size via version control_
+  <i>Track Webpack output size via version control</i>
 </p>
 
 ## 🙋‍♀️ Why?

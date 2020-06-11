@@ -1,5 +1,5 @@
 {
-  "name": "webpack-distsize-plugin",
+  "name": "webpack-distsize",
   "version": "0.0.1",
   "description": "",
   "main": "lib",
@@ -23,14 +23,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/privatenumber/webpack-distsize-plugin.git"
+    "url": "git+https://github.com/privatenumber/webpack-distsize.git"
   },
   "author": "Hiroki Osame <hiroki.osame@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/privatenumber/webpack-distsize-plugin/issues"
+    "url": "https://github.com/privatenumber/webpack-distsize/issues"
   },
-  "homepage": "https://github.com/privatenumber/webpack-distsize-plugin#readme",
+  "homepage": "https://github.com/privatenumber/webpack-distsize#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",

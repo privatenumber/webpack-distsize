@@ -47,12 +47,9 @@
   "dependencies": {
     "chalk": "^4.0.0",
     "cli-simple-table": "0.0.1",
-    "cli-truncate": "^2.1.0",
-    "cliui": "^6.0.0",
     "filesize": "^6.1.0",
     "gzip-size": "^5.1.1",
     "lodash": "^4.17.15",
-    "minimist": "^1.2.5",
-    "strip-ansi": "^6.0.0"
+    "minimist": "^1.2.5"
   }
 }

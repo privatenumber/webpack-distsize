@@ -7,10 +7,10 @@
 </h1>
 
 <p align="center">
-	<img src="/.github/screenshot.png">
+  <img src="/.github/screenshot.png" width="70%">
+  <br>
+  <i>Track Webpack output size via version control</i>
 </p>
-
-Be conscious of distrubtion size by tracking asset size stats with version control
 
 ## 🙋‍♀️ Why?
 - **📊 Size conscious** Be aware of how your changes impact file size

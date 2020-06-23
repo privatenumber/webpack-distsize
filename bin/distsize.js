@@ -42,6 +42,7 @@ Options:
 
 	const [filepath = '.distsize.json'] = argv._;
 	if (!fs.existsSync(filepath)) {
+		// eslint-disable-next-line no-console
 		console.error(chalk.bold.red('[distsize error]'), `"${filepath}" doesn't exist\n`);
 		return;
 	}

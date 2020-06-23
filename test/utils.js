@@ -1,16 +1,15 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const { createFsFromVolume, Volume } = require('memfs');
 const fs = require('fs');
 const path = require('path');
 const { ufs } = require('unionfs');
 const DistsizePlugin = require('..');
 
-function build(volJson, config = {}) {
+function build(mfs, config = {}, log = false) {
 	return new Promise((resolve, reject) => {
-		const mfs = createFsFromVolume(Volume.fromJSON(volJson));
-
-		mfs.join = path.join.bind(path);
+		if (!mfs.join) {
+			mfs.join = path.join.bind(path); // eslint-disable-line no-param-reassign
+		}
 
 		const compiler = webpack(merge({
 			mode: 'production',
@@ -22,7 +21,7 @@ function build(volJson, config = {}) {
 				modules: [path.resolve(__dirname, '../node_modules')],
 			},
 			plugins: [
-				new DistsizePlugin({ log: false }),
+				new DistsizePlugin({ log }),
 			],
 			output: {
 				path: '/dist',

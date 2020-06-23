@@ -37,6 +37,7 @@ module.exports = {
 };
 ```
 
+Run your Webpack build and track the produced `.distsize.json` file via version control.
 
 ### Distsize viewing
 

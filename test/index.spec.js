@@ -162,7 +162,7 @@ test('Log decrease in size', async () => {
 
 	await build(mfs, {
 		entry: {
-			longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName: '/index.js',
+			main: '/index.js',
 		},
 		output: {
 			filename: '[name].js',
@@ -173,7 +173,7 @@ test('Log decrease in size', async () => {
 
 	await build(mfs, {
 		entry: {
-			longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName: '/index.js',
+			main: '/index.js',
 		},
 		output: {
 			filename: '[name].js',
@@ -206,7 +206,7 @@ test('Log increase in size', async () => {
 
 	await build(mfs, {
 		entry: {
-			longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName: '/index.js',
+			main: '/index.js',
 		},
 		output: {
 			filename: '[name].js',
@@ -217,7 +217,7 @@ test('Log increase in size', async () => {
 
 	await build(mfs, {
 		entry: {
-			longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName: '/index.js',
+			main: '/index.js',
 		},
 		output: {
 			filename: '[name].js',

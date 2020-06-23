@@ -1,6 +1,6 @@
 {
   "name": "webpack-distsize",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Track Webpack output size via version control",
   "keywords": [
     "webpack",

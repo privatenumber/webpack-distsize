@@ -1,13 +1,18 @@
 const outdent = require('outdent');
+const { createFsFromVolume, Volume } = require('memfs');
 const { build } = require('./utils');
 
+const createFs = (vol) => createFsFromVolume(Volume.fromJSON(vol));
+
 test('Single output file', async () => {
-	const built = await build({
+	const mfs = createFs({
 		'/index.js': outdent`
 		const value = 'hello world';
 		export default value;
 		`,
-	}, {
+	});
+
+	const built = await build(mfs, {
 		entry: '/index.js',
 	});
 
@@ -22,7 +27,7 @@ test('Single output file', async () => {
 });
 
 test('Multiple output files', async () => {
-	const built = await build({
+	const mfs = createFs({
 		'/entry-a.js': outdent`
 		const value = 'hello world A';
 		export default value;
@@ -35,7 +40,9 @@ test('Multiple output files', async () => {
 		const value = 'goodbye world C';
 		export default value;
 		`,
-	}, {
+	});
+
+	const built = await build(mfs, {
 		entry: {
 			entryA: '/entry-a.js',
 			entryB: '/entry-b.js',
@@ -53,7 +60,7 @@ test('Multiple output files', async () => {
 });
 
 test('Single output file w/ chunks', async () => {
-	const built = await build({
+	const mfs = createFs({
 		'/index.js': outdent`
 		import('/dep1').then(console.log);
 		import('/dep2').then(console.log);
@@ -68,7 +75,9 @@ test('Single output file w/ chunks', async () => {
 		import _ from 'lodash';
 		console.log('_');
 		`,
-	}, {
+	});
+
+	const built = await build(mfs, {
 		entry: '/index.js',
 	});
 
@@ -85,7 +94,7 @@ test('Single output file w/ chunks', async () => {
 
 
 test('Single output file w/ chunks', async () => {
-	const built = await build({
+	const mfs = createFs({
 		'/index.js': outdent`
 		import('/dep1').then(console.log);
 		import('/dep2').then(console.log);
@@ -105,7 +114,9 @@ test('Single output file w/ chunks', async () => {
 		const test = Math.random();
 		export default test;
 		`,
-	}, {
+	});
+
+	const built = await build(mfs, {
 		entry: {
 			longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName: '/index.js',
 		},
@@ -124,4 +135,92 @@ test('Single output file w/ chunks', async () => {
 	expect(built.assets[2].name).toBe('3.c3c808e12a44982a7a86.js');
 	expect(built.assets[3].name).toBe('4.ab58408659f5d92c4988.js');
 	expect(built.assets[4].name).toBe('longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName.eab4008460d759da42e8.js');
+});
+
+test('Log decrease in size', async () => {
+	const mfs = createFs({
+		'/index.js': outdent`
+		import('/dep1').then(console.log);
+		import('/dep2').then(console.log);
+		const value = 'hello world A';
+		export default value;
+		`,
+		'/dep1.js': outdent`
+		import('./dep3').then(console.log);
+		const value = 'goodbye world B';
+		export default value;
+		`,
+		'/dep2.js': outdent`
+		import _ from 'lodash';
+		console.log('_');
+		`,
+		'/dep3.js': outdent`
+		const test = Math.random();
+		export default test;
+		`,
+	});
+
+	await build(mfs, {
+		entry: {
+			main: '/index.js',
+		},
+		output: {
+			filename: '[name].js',
+		},
+	});
+
+	mfs.writeFileSync('/index.js', 'console.log(1);');
+
+	await build(mfs, {
+		entry: {
+			main: '/index.js',
+		},
+		output: {
+			filename: '[name].js',
+		},
+	}, true);
+});
+
+test('Log increase in size', async () => {
+	const mfs = createFs({
+		'/index.js': outdent`
+		import('/dep1').then(console.log);
+		import('/dep2').then(console.log);
+		const value = 'hello world A';
+		export default value;
+		`,
+		'/dep1.js': outdent`
+		import('./dep3').then(console.log);
+		const value = 'goodbye world B';
+		export default value;
+		`,
+		'/dep2.js': outdent`
+		import _ from 'lodash';
+		console.log('_');
+		`,
+		'/dep3.js': outdent`
+		const test = Math.random();
+		export default test;
+		`,
+	});
+
+	await build(mfs, {
+		entry: {
+			main: '/index.js',
+		},
+		output: {
+			filename: '[name].js',
+		},
+	});
+
+	mfs.writeFileSync('/dep3.js', 'import chalk from \'chalk\';');
+
+	await build(mfs, {
+		entry: {
+			main: '/index.js',
+		},
+		output: {
+			filename: '[name].js',
+		},
+	}, true);
 });

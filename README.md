@@ -71,17 +71,11 @@ npx distsize
 
   
 ## 💁‍♀️ FAQ
-- **Can it track and display asset growth as a percentage?**
+- **Can it track and display asset growth?**
 
-  Webpack builds can emit new assets with completely different names depending on [configuration](https://webpack.js.org/configuration/output/#template-strings), so it's near impossible to _accurately_ draw a comparison on all builds.
-  
-  If only the name of the asset changed, the old and new versions of file can be tracked via content, but if the content didn't change, size didn't either so there isn't value in surfacing that.
-  
-  If both the name and content changed, it could be argued they're completely different files. Even Git wouldn't be able to automatically attribute the change.
-  
-  The only growth that can be accurately measured is in total size, which is important, but is followed by the question "why?" which requires looking at growth in specific assets.
+  Depends on your Webpack configuration. If your assets are emitted under the same name, then yes.
 
-  There may be future support to measure growth for builds that have static asset names but currently, a good enough read can currently be made via Github diff.
+  But if it usses [`[hash]`, `[contenthash]`, `[chunkhash]`](https://webpack.js.org/configuration/output/#template-strings), then it's not possible to _accurately_ draw a comparison across builds.
 
 - **Can it track size impact from dependency changes?**
 

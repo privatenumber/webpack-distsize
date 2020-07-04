@@ -30,9 +30,7 @@ module.exports = {
 
 	plugins: [
 		// 2. Add to plugins array
-		new Distsize({
-			// Options
-		})
+		new Distsize()
 	]
 };
 ```
@@ -49,6 +47,12 @@ npx distsize
 
 
 ## 🎛 Options 
+Configure Distisze by passing in an options object:
+```js
+new Distsize({
+	// Options
+})
+```
 
 - `log` `<Boolean>` (default `true`)  - Whether to log the distsize to stdout
 

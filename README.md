@@ -60,7 +60,7 @@ new Distsize({
 
 - `indent` `<Number|String>`  (default `2`) - Indentation for distsize JSON data
 
-- `filter` `<Function|RegExp|String>` (`null`)  - Filter to include assets by name
+- `filter` `<Function(assetName)|RegExp|String>` (`null`)  - Filter to include assets by name
 
 - `thresholds` `<Array>` - Color coding to use for size thresholds
 

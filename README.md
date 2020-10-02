@@ -61,6 +61,10 @@ new Distsize({
 - `indent` `<Number|String>`  (default `2`) - Indentation for distsize JSON data
 
 - `filter` `<Function(assetName)|RegExp|String>` (`null`)  - Filter to include assets by name
+  ```js
+  // Example filter that ignores hidden files and source-maps
+  filter: (asset) => !asset.startsWith('.') && !asset.endsWith('.map')
+  ```
 
 - `thresholds` `<Array>` - Color coding to use for size thresholds
 

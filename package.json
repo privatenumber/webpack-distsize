@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/privatenumber/webpack-distsize#readme",
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.21.1",
     "husky": "^4.2.5",
@@ -55,11 +55,15 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@pvtnbr/eslint-config-base": "^0.1.9",
     "byte-size": "^7.0.0",
     "chalk": "^4.0.0",
     "cli-simple-table": "0.0.1",
     "gzip-size": "^5.1.1",
     "lodash": "^4.17.15",
     "minimist": "^1.2.5"
+  },
+  "eslintConfig": {
+    "extends": "@pvtnbr/eslint-config-base"
   }
 }

@@ -1,14 +1,14 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
 const fs = require('fs');
 const path = require('path');
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
 const { ufs } = require('unionfs');
 const DistsizePlugin = require('..');
 
 function build(mfs, config = {}, log = false) {
 	return new Promise((resolve, reject) => {
 		if (!mfs.join) {
-			mfs.join = path.join.bind(path); // eslint-disable-line no-param-reassign
+			mfs.join = path.join.bind(path);
 		}
 
 		const compiler = webpack(merge({
@@ -31,9 +31,9 @@ function build(mfs, config = {}, log = false) {
 		compiler.inputFileSystem = ufs.use(fs).use(mfs);
 		compiler.outputFileSystem = mfs;
 
-		compiler.run((err, stats) => {
-			if (err) {
-				reject(err);
+		compiler.run((error, stats) => {
+			if (error) {
+				reject(error);
 				return;
 			}
 
@@ -46,7 +46,6 @@ function build(mfs, config = {}, log = false) {
 		});
 	});
 }
-
 
 module.exports = {
 	build,

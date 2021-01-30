@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const { promisify } = require('util');
 const minimist = require('minimist');
 const chalk = require('chalk');
-const { promisify } = require('util');
 const { version } = require('../package');
 const formatResult = require('../lib/format-result');
 
 const $readFile = promisify(fs.readFile);
 
-const readJson = (filepath) => $readFile(filepath).then(JSON.parse);
+const readJson = filepath => $readFile(filepath).then(JSON.parse);
 
 (async () => {
 	const argv = minimist(process.argv.slice(2), {

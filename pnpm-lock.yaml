@@ -2,8 +2,8 @@ dependencies:
   '@pvtnbr/eslint-config-base': 0.1.9_eslint@7.18.0
   byte-size: 7.0.0
   chalk: 4.1.0
-  cli-simple-table: 0.0.1
-  gzip-size: 5.1.1
+  cli-simple-table: 1.0.1
+  gzip-size: 6.0.0
   lodash: 4.17.20
   minimist: 1.2.5
 devDependencies:
@@ -14,10 +14,10 @@ devDependencies:
   jest: 26.6.3
   lint-staged: 10.5.3
   memfs: 3.2.0
-  outdent: 0.7.1
+  outdent: 0.8.0
   unionfs: 4.4.0
   webpack: 4.46.0
-  webpack-merge: 4.2.2
+  webpack-merge: 5.7.3
 lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.12.11:
@@ -1476,14 +1476,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha1-JkMFp65JDR0Dvwybp8kl0XU68wc=
-  /cli-simple-table/0.0.1:
+  /cli-simple-table/1.0.1:
     dependencies:
       chalk: 4.1.0
       cli-truncate: 2.1.0
       strip-ansi: 6.0.0
     dev: false
     resolution:
-      integrity: sha1-5rmv2XX2v+L35NFzkqjlyBFZZPI=
+      integrity: sha512-Aajew3rUqssEDe05W3mAu5T3l/89YBtasLGgVJLhrviHRMz43trqEsYKJE17T9GE7J6JQID+Vmek3XUgYblt0A==
   /cli-truncate/2.1.0:
     dependencies:
       slice-ansi: 3.0.0
@@ -1491,7 +1491,7 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha1-w54ovwXtzeW+O5iZKiLe7Vork8c=
+      integrity: sha512-n8fOixwDD6b/ObinzTrp1ZKFzbgvKZvuz/TvejnLn1aQfC6r52XEx85FmuC+3HI+JM7coBRXUvNqEU2PHVrHpg==
   /cliui/6.0.0:
     dependencies:
       string-width: 4.2.0
@@ -1500,6 +1500,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-UR1wLAxOQcoVbX0OlgIfI+EyJbE=
+  /clone-deep/4.0.1:
+    dependencies:
+      is-plain-object: 2.0.4
+      kind-of: 6.0.3
+      shallow-clone: 3.0.1
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==
   /co/4.6.0:
     dev: true
     engines:
@@ -1887,7 +1897,7 @@ packages:
   /duplexer/0.1.2:
     dev: false
     resolution:
-      integrity: sha1-Or5DrvODX4rgd9E23c4PJ2sEAOY=
+      integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==
   /duplexify/3.7.1:
     dependencies:
       end-of-stream: 1.4.4
@@ -2748,15 +2758,14 @@ packages:
     optional: true
     resolution:
       integrity: sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
-  /gzip-size/5.1.1:
+  /gzip-size/6.0.0:
     dependencies:
       duplexer: 0.1.2
-      pify: 4.0.1
     dev: false
     engines:
-      node: '>=6'
+      node: '>=10'
     resolution:
-      integrity: sha1-y5vuaS+HwGErIyhAqHOQTkwTUnQ=
+      integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==
   /har-schema/2.0.0:
     dev: true
     engines:
@@ -3211,7 +3220,7 @@ packages:
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha1-LBY7P6+xtgbZ0Xko8FwqHDjgdnc=
+      integrity: sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og==
   /is-potential-custom-element-name/1.0.0:
     dev: true
     resolution:
@@ -3917,7 +3926,7 @@ packages:
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha1-B8BQNKbDSfoG4k+jWqdttFgM5N0=
+      integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
   /kleur/3.0.3:
     dev: true
     engines:
@@ -4559,10 +4568,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-hUNzx/XCMVkU/Jv8a9gjj92h7Cc=
-  /outdent/0.7.1:
+  /outdent/0.8.0:
     dev: true
     resolution:
-      integrity: sha1-6bQARDYiqXdgsLx0+jIjJSzNAqI=
+      integrity: sha512-KiOAIsdpUTcAXuykya5fnVVT+/5uS0Q1mrkRHcF89tpieSmY33O/tmc54CqwA+bfhbtEfZUNLHaPUiB9X3jt1A==
   /p-each-series/2.2.0:
     dev: true
     engines:
@@ -4783,6 +4792,7 @@ packages:
     resolution:
       integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=
   /pify/4.0.1:
+    dev: true
     engines:
       node: '>=6'
     resolution:
@@ -5383,6 +5393,14 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-N6XPC4HsvGlD3hCbopYNGyZYSuc=
+  /shallow-clone/3.0.1:
+    dependencies:
+      kind-of: 6.0.3
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-/6KqX+GVUdqPuPPd2LxDDxzX6CAbjJehAAOKlNpqqUpAqPM6HeL8f+o3a+JsyGjn2lv0WY8UsTgUJjU9Ok55NA==
   /shebang-command/1.2.0:
     dependencies:
       shebang-regex: 1.0.0
@@ -5438,7 +5456,7 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha1-Md3BCTCht+C2ewjJbC9Jt3p4l4c=
+      integrity: sha512-pSyv7bSTC7ig9Dcgbw9AuRNUb5k5V6oDudjZoMBSr13qpLBG7tB+zgCkARjq7xIUgdz5P1Qe8u+rSGdouOOIyQ==
   /slice-ansi/4.0.0:
     dependencies:
       ansi-styles: 4.3.0
@@ -6171,12 +6189,15 @@ packages:
       node: '>=10.4'
     resolution:
       integrity: sha1-kRG01+qArNQPUnDWZmIa+ni2lRQ=
-  /webpack-merge/4.2.2:
+  /webpack-merge/5.7.3:
     dependencies:
-      lodash: 4.17.20
+      clone-deep: 4.0.1
+      wildcard: 2.0.0
     dev: true
+    engines:
+      node: '>=10.0.0'
     resolution:
-      integrity: sha1-onxS6ng9E5iv0gh/VH17nS9DY00=
+      integrity: sha512-6/JUQv0ELQ1igjGDzHkXbVDRxkfA57Zw7PfiupdLFJYrgFqY5ZP8xxbpp2lU3EPwYx89ht5Z/aDkD40hFCm5AA==
   /webpack-sources/1.4.3:
     dependencies:
       source-list-map: 2.0.1
@@ -6267,6 +6288,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
+  /wildcard/2.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==
   /word-wrap/1.2.3:
     dev: true
     engines:
@@ -6394,18 +6419,18 @@ specifiers:
   '@pvtnbr/eslint-config-base': ^0.1.9
   byte-size: ^7.0.0
   chalk: ^4.0.0
-  cli-simple-table: 0.0.1
+  cli-simple-table: 1.0.1
   eslint: ^7.18.0
   eslint-config-airbnb-base: ^14.1.0
   eslint-plugin-import: ^2.21.1
-  gzip-size: ^5.1.1
+  gzip-size: ^6.0.0
   husky: ^4.2.5
   jest: ^26.0.1
   lint-staged: ^10.2.9
   lodash: ^4.17.15
   memfs: ^3.2.0
   minimist: ^1.2.5
-  outdent: ^0.7.1
+  outdent: ^0.8.0
   unionfs: ^4.4.0
   webpack: ^4.43.0
-  webpack-merge: ^4.2.2
+  webpack-merge: ^5.7.3

@@ -2,7 +2,7 @@ const outdent = require('outdent');
 const { createFsFromVolume, Volume } = require('memfs');
 const { build } = require('./utils');
 
-const createFs = (vol) => createFsFromVolume(Volume.fromJSON(vol));
+const createFs = vol => createFsFromVolume(Volume.fromJSON(vol));
 
 test('Single output file', async () => {
 	const mfs = createFs({
@@ -83,15 +83,14 @@ test('Single output file w/ chunks', async () => {
 
 	expect(typeof built).toBe('object');
 
-	expect(built.totalSize.raw[0]).toBe(551365);
-	expect(built.totalSize.gzip[0]).toBe(98995);
+	expect(built.totalSize.raw[0]).toBe(553416);
+	expect(built.totalSize.gzip[0]).toBe(99408);
 
 	expect(built.assets[0].name).toBe('1.js');
 	expect(built.assets[1].name).toBe('2.js');
 	expect(built.assets[2].name).toBe('3.js');
 	expect(built.assets[3].name).toBe('main.js');
 });
-
 
 test('Single output file w/ chunks', async () => {
 	const mfs = createFs({
@@ -127,14 +126,14 @@ test('Single output file w/ chunks', async () => {
 
 	expect(typeof built).toBe('object');
 
-	expect(built.totalSize.raw[0]).toBe(551909);
-	expect(built.totalSize.gzip[0]).toBe(99342);
+	expect(built.totalSize.raw[0]).toBe(553960);
+	expect(built.totalSize.gzip[0]).toBe(99754);
 
-	expect(built.assets[0].name).toBe('1.5a6ea2d40bd1d9f5a0b8.js');
+	expect(built.assets[0].name).toBe('1.c0cdab57c7dad87ea4ab.js');
 	expect(built.assets[1].name).toBe('2.96d4afac23210f1c4b1a.js');
 	expect(built.assets[2].name).toBe('3.c3c808e12a44982a7a86.js');
 	expect(built.assets[3].name).toBe('4.ab58408659f5d92c4988.js');
-	expect(built.assets[4].name).toBe('longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName.eab4008460d759da42e8.js');
+	expect(built.assets[4].name).toBe('longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglongEntryName.63e87e5c624667c749db.js');
 });
 
 test('Log decrease in size', async () => {
@@ -213,7 +212,7 @@ test('Log increase in size', async () => {
 		},
 	});
 
-	mfs.writeFileSync('/dep3.js', 'import chalk from \'chalk\';');
+	mfs.writeFileSync('/dep3.js', 'const test1 = Math.random(); const test2 = Math.random();');
 
 	await build(mfs, {
 		entry: {

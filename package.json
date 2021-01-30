@@ -55,9 +55,9 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "byte-size": "^7.0.0",
     "chalk": "^4.0.0",
     "cli-simple-table": "0.0.1",
-    "filesize": "^6.1.0",
     "gzip-size": "^5.1.1",
     "lodash": "^4.17.15",
     "minimist": "^1.2.5"

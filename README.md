@@ -93,7 +93,7 @@ new Distsize({
 
   If a dependency change impacts distribution size, it will be reflected by this plugin, but it will not contain any details that hint at which dependency grew in size. I recommend doing upgrades in isolation so it's easily identifiable. 
 
-  Distsize focuses specifically on distribution size and making it digestible because that alone can be overwhelming -- a large codebase can produce hundreds of assets.
+  Distsize focuses specifically on distribution size and making it digestible because that alone can be overwhelming—a large codebase can produce hundreds of assets.
 
   If you want something similar for dependencies, I recommend using [webpack-dependency-size](https://github.com/privatenumber/webpack-dependency-size).
 

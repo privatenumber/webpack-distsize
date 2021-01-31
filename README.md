@@ -98,6 +98,8 @@ new Distsize({
 ## 👨‍👩‍👧 Related
 - [webpack-dependency-size](https://github.com/privatenumber/webpack-dependency-size) - Analyze dependency assets bundled into your Webpack build
 
+- [webpack-analyze-duplication-plugin](https://github.com/privatenumber/webpack-analyze-duplication-plugin) - Detect duplicated modules in your Webpack build
+
 ## 💼 License
 
 MIT

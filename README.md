@@ -4,6 +4,9 @@
   <img src="https://github.com/privatenumber/webpack-distsize/raw/master/.github/screenshot.png" width="70%">
   <br>
   <i>Track Webpack output size via version control</i>
+  <br><br>
+  <sub>If you like this project, please star it & <a href="https://github.com/privatenumber">follow me</a> to see what other cool projects I'm working on! ❤️</sub>
+
 </p>
 
 ## ⭐️ Features

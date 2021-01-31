@@ -4,6 +4,9 @@
   <img src="https://github.com/privatenumber/webpack-distsize/raw/master/.github/screenshot.png" width="70%">
   <br>
   <i>Track Webpack output size via version control</i>
+  <br><br>
+  <sub>If you like this project, please star it & <a href="https://github.com/privatenumber">follow me</a> to see what other cool projects I'm working on! ❤️</sub>
+
 </p>
 
 ## ⭐️ Features
@@ -90,13 +93,15 @@ new Distsize({
 
   If a dependency change impacts distribution size, it will be reflected by this plugin, but it will not contain any details that hint at which dependency grew in size. I recommend doing upgrades in isolation so it's easily identifiable. 
 
-  Distsize focuses specifically on distribution size and making it digestible because that alone can be overwhelming -- a large codebase can produce hundreds of assets.
+  Distsize focuses specifically on distribution size and making it digestible because that alone can be overwhelming—a large codebase can produce hundreds of assets.
 
   If you want something similar for dependencies, I recommend using [webpack-dependency-size](https://github.com/privatenumber/webpack-dependency-size).
 
 
 ## 👨‍👩‍👧 Related
 - [webpack-dependency-size](https://github.com/privatenumber/webpack-dependency-size) - Analyze dependency assets bundled into your Webpack build
+
+- [webpack-analyze-duplication-plugin](https://github.com/privatenumber/webpack-analyze-duplication-plugin) - Detect duplicated modules in your Webpack build
 
 ## 💼 License
 
